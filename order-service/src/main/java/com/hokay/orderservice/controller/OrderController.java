@@ -27,6 +27,7 @@ public class OrderController {
         return CompletableFuture.supplyAsync(() -> orderService.placeOrder(orderRequest));
     }
 
+    @SuppressWarnings("unused")
     public CompletableFuture<String> fallbackMethod(OrderRequest orderRequest, RuntimeException runtimeException) {
         return CompletableFuture.supplyAsync(() -> "Oops! Something went wrong, please order after some time!");
     }
